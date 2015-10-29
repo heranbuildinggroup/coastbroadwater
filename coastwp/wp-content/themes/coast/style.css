@@ -1,9 +1,9 @@
 /*
 Theme Name: coast
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI:
+Author: Heran Building Group
+Author URI: http://heran.com.au
+Description: Theme for Coast Broadwater website
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 # Typography
 # Elements
+# Page Layouts
 # Forms
 # Navigation
 	## Links
@@ -114,7 +115,7 @@ dfn {
 
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	margin: 0 0 0.67em;
 }
 
 mark {
@@ -271,8 +272,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #384f5b;
+	font-family: Lato, Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -285,6 +286,17 @@ h4,
 h5,
 h6 {
 	clear: both;
+    font-family: Dosis, arial, helvetica, sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.entry-title span.line-2 {
+    display: block;
 }
 
 p {
@@ -416,6 +428,59 @@ table {
 	width: 100%;
 }
 
+
+/*--------------------------------------------------------------
+# Page Layouts
+--------------------------------------------------------------*/
+
+.container, nav {
+    width: 100%;
+    float: left;
+}
+
+.infopack {
+    background-color:#22b6cc;
+    height: 151px;
+}
+
+.infopack .logo {
+    float: left;
+    width: 100%;
+    height: 110px;
+    background: #ffffff;
+}
+
+.infopack .logo a {
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.infopack a.request {
+    text-align: center;
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 2.6;
+}
+
+
+/* Home page */
+
+body.home .content-area {
+    float: left;
+    width: 100%;
+    background: #c8ebf2;
+}
+
+
+
+
+
+
+
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -536,13 +601,20 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
-	position: relative;
+    width: 100%;
+    float: left;
+    position: relative;
+    text-align: left;
+    background: #384f5b;
+    line-height: 2.6;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+    color: #ffffff;
+    padding: 0 0 0 40px;
+
 }
 
 .main-navigation ul ul {
@@ -569,6 +641,8 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+    background: #c8ebf2;
+    color: #384f5b;
 }
 
 .main-navigation ul ul :hover > a,
@@ -595,18 +669,31 @@ a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+
+button.menu-toggle {
+    color: inherit;
+    text-shadow: none;
+    padding: 0;
+    width: 100%;
+    float: left;
+    border: none;
+    line-height: 2.6;
+    font-size: 16px;
+    border-radius: 0;
+    margin: 0;
+    background: #c8ebf2;
+    box-shadow: none;
+
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+.menu, .menu ul {
+    float: left;
+    width: 100%;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
 }
 
 .site-main .comment-navigation,
@@ -888,3 +975,134 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+
+/* 768px - iPads (portrait), etc ----------- */
+
+@media only screen and (min-width : 768px) {
+
+    .container {
+        float: none;
+        margin: 0 auto;
+        width: 768px;
+    }
+
+    .infopack {
+        height: 45px;
+        position: relative;
+    }
+
+    .infopack .logo {
+        position: absolute;
+        float: left;
+        z-index: 100;
+        width: 260px;
+    }
+
+    .infopack a.request {
+        float: right;
+        width: auto;
+        margin-right: 10px;
+    }
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: block;
+        float: right;
+        width: auto;
+	}
+
+    .main-navigation li {
+        width: auto;
+        float: left;
+        background: transparent;
+    }
+
+    .main-navigation a {
+        font-size: 14px;
+        padding: 0 12px;
+        color: #384f5b;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* 1000px - standard 1024px screens ----------- */
+
+@media only screen and (min-width : 1000px) {
+
+    .container {
+        float: none;
+        margin: 0 auto;
+        width: 1000px;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* 1200px - larger desktop screens ----------- */
+
+@media only screen and (min-width : 1200px) {
+
+    .container {
+        float: none;
+        margin: 0 auto;
+        width: 1200px;
+    }
+
+
+    .home .content-area iframe {
+        float: left;
+        width: 650px;
+    }
+
+    .home .content-area .homecontent {
+        float: left;
+        width: 550px;
+        padding: 0 0 0 60px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

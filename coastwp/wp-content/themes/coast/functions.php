@@ -150,3 +150,20 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/*
+ * Split and wrap title
+ */
+    function get_split_title($postID) {
+        $title = get_the_title($postID);
+        $lines = explode(' &#8211; ', $title);
+        $output = false;
+        $count = 0;
+
+        foreach( $lines as $line ) {
+            $count++;
+            $output .= '<span class="line-'.$count.'">'.$line.'</span> ';
+        }
+
+        return $output;
+    }

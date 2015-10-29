@@ -10,19 +10,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'coast' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+    <?php if( get_field('vimeo_link') ): ?>
+        <?php echo the_field('vimeo_link'); ?>
+    <?php endif; ?>
+
+    <div class="homecontent">
+        <header class="entry-header">
+            <h1 class="entry-title"><?php echo get_split_title($post->ID); ?></h1>
+
+        </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <?php the_content(); ?>
+            <?php
+                wp_link_pages( array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'coast' ),
+                    'after'  => '</div>',
+                ) );
+            ?>
+
+        </div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php
@@ -37,5 +45,7 @@
 			);
 		?>
 	</footer><!-- .entry-footer -->
+    </div>
+
 </article><!-- #post-## -->
 
