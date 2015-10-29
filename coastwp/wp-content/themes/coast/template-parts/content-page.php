@@ -11,13 +11,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php if( get_field('vimeo_link') ): ?>
-        <?php echo the_field('vimeo_link'); ?>
+    <?php if( CFS()->get( 'vimeo_link' ) ): ?>
+        <?php echo CFS()->get( 'vimeo_link' ); ?>
     <?php endif; ?>
 
     <div class="homecontent">
         <header class="entry-header">
-            <h1 class="entry-title"><?php echo get_split_title($post->ID); ?></h1>
+            <h2 class="entry-title"><?php echo get_split_title($post->ID); ?></h2>
 
         </header><!-- .entry-header -->
 

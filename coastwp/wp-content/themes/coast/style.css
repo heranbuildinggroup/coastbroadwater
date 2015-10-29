@@ -291,8 +291,10 @@ h6 {
     text-transform: uppercase;
 }
 
-h1 {
+h2 {
     font-size: 48px;
+    line-height: 1.4;
+    margin: 0 0 0.5em;
 }
 
 .entry-title span.line-2 {
@@ -463,17 +465,78 @@ table {
     color: #ffffff;
     text-decoration: none;
     line-height: 2.6;
+    background: transparent url(img/infopack_arrow.png) no-repeat right center;
+    padding-right: 20px;
+}
+
+.infopack a.request:hover {
+    color: #c8ebf2;
 }
 
 
 /* Home page */
 
+span.wds_right_btn_cont {
+    background: transparent url(img/slider_right.png) no-repeat center center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+span.wds_right_btn_cont:hover {
+    background: transparent url(img/slider_right_hover.png) no-repeat center center;
+}
+
+span.wds_right-ico_0 i {
+    display: none;
+}
+
+span.wds_left_btn_cont {
+    background: transparent url(img/slider_left.png) no-repeat center center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+span.wds_left_btn_cont:hover {
+    background: transparent url(img/slider_left_hover.png) no-repeat center center;
+}
+
+span.wds_left-ico_0 i {
+    display: none;
+}
+
 body.home .content-area {
     float: left;
     width: 100%;
     background: #c8ebf2;
+    padding: 0 10px;
+    box-sizing: padding-box;
 }
 
+.home .content-area article {
+    text-align: center;
+}
+
+.home .content-area iframe {
+    margin: 0 auto;
+    float: none;
+    width: 650px;
+    margin: 40px 0;
+}
+
+.content-blocks .content-block h2 {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.content-block p {
+    font-size: 14px;
+}
+
+.content-block p br {
+    line-height: 3;
+}
 
 
 
@@ -989,7 +1052,7 @@ object {
     .container {
         float: none;
         margin: 0 auto;
-        width: 768px;
+        width: 100%;
     }
 
     .infopack {
@@ -1042,9 +1105,9 @@ object {
 
 
 
-/* 1000px - standard 1024px screens ----------- */
+/* 1024px - standard 1024px screens ----------- */
 
-@media only screen and (min-width : 1000px) {
+@media only screen and (min-width : 1024px) {
 
     .container {
         float: none;
@@ -1052,6 +1115,34 @@ object {
         width: 1000px;
     }
 
+    .container-narrow {
+        float: none;
+        margin: 0 auto;
+        width: 960px;
+    }
+
+    .content-blocks {
+        float: left;
+        width: 100%;
+        margin: 100px 0 0;
+        max-height: 280px;
+        overflow: hidden;
+    }
+
+    .content-blocks.item-even img {
+        float: left;
+        width: 450px;
+        margin-right: 60px;
+    }
+
+    .content-blocks.item-odd img {
+        margin-left: 60px;
+    }
+
+    .content-blocks .content-block {
+        float: left;
+        width: 450px;
+    }
 
 
 }
@@ -1062,7 +1153,7 @@ object {
 
 
 
-/* 1200px - larger desktop screens ----------- */
+/* 1280px - larger desktop screens ----------- */
 
 @media only screen and (min-width : 1200px) {
 
@@ -1072,6 +1163,9 @@ object {
         width: 1200px;
     }
 
+    .home .content-area {
+        padding: 40px 0;
+    }
 
     .home .content-area iframe {
         float: left;

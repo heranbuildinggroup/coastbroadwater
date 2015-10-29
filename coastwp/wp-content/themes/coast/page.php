@@ -43,4 +43,24 @@ get_header(); ?>
         </div>
 	</div><!-- #primary -->
 
+    <div id="content-blocks" class="site-blocks">
+
+        <div class="container-narrow">
+        <?php
+            $fields = CFS()->get( 'content_blocks' );
+
+            foreach ( $fields as $field ) { ?>
+                <div class="content-blocks <?=($c++%2==1)?"item-even":"item-odd"?> item">
+                    <?php echo wp_get_attachment_image( $field['block_image'], 'medium' ); ?>
+                    <div class="content-block">
+                        <h2><?php echo $field['block_title']; ?></h2>
+                        <p><?php echo $field['block_text']; ?></p>
+                    </div>
+                </div>
+        <?php } ?>
+        </div>
+
+
+    </div>
+
 <?php get_footer(); ?>
