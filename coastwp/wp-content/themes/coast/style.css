@@ -542,6 +542,61 @@ body.home .content-area {
 
 
 
+/* Content pages */
+
+.bannerimage {
+    width: 100%;
+    height: 300px;
+    display: block;
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.bannerimage.aligntop {
+    background-position-y: 0%;
+}
+
+.bannerimage.align10 {
+    background-position-y: 10%;
+}
+
+.bannerimage.align20 {
+    background-position-y: 20%;
+}
+
+.bannerimage.align30 {
+    background-position-y: 30%;
+}
+
+.bannerimage.align40 {
+    background-position-y: 40%;
+}
+
+.bannerimage.alignmiddle {
+    background-position-y: 50%;
+}
+
+.bannerimage.align60 {
+    background-position-y: 60%;
+}
+
+.bannerimage.align70 {
+    background-position-y: 70%;
+}
+
+.bannerimage.align80 {
+    background-position-y: 80%;
+}
+
+.bannerimage.align90 {
+    background-position-y: 90%;
+}
+
+.bannerimage.alignbottom {
+    background-position-y: 100%;
+}
+
+
 
 
 /*--------------------------------------------------------------

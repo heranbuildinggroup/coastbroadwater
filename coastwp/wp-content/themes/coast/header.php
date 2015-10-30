@@ -31,7 +31,7 @@
             <div class="infopack">
                 <div class="container">
                     <div class="logo">
-                        <a href="#" title="<?php bloginfo( 'name' ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+                        <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
                     </div>
                     <a href="#" title="Request your free information pack now" class="request">Request your free information pack now</a>
                 </div>
