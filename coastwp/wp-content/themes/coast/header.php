@@ -18,7 +18,7 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Dosis:200' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Dosis:200,400' rel='stylesheet' type='text/css'>
 
         <?php wp_head(); ?>
     </head>

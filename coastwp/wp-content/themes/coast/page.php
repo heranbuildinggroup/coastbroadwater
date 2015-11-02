@@ -16,9 +16,15 @@ get_header(); ?>
 
 
 
-<?php if(is_front_page() ) {
+<?php if(is_front_page() ) { ?>
 
-    wd_slider(1); ?>
+    <h1 id="bannertext">
+        <span><?php if( CFS()->get( 'banner_text_line_1' ) ): ?><?php echo CFS()->get( 'banner_text_line_1' ); ?><?php endif; ?></span>
+        <span><?php if( CFS()->get( 'banner_text_line_2' ) ): ?><?php echo CFS()->get( 'banner_text_line_2' ); ?><?php endif; ?></span>
+        <span><?php if( CFS()->get( 'banner_text_line_3' ) ): ?><?php echo CFS()->get( 'banner_text_line_3' ); ?><?php endif; ?></span>
+    </h1>
+
+    <?php wd_slider(1); ?>
 
 	<div id="primary" class="content-area">
         <div class="container">
@@ -57,6 +63,38 @@ get_header(); ?>
             <?php } ?>
         </div>
     </div>
+
+
+    <?php } elseif( is_page( 13 ) ) { ?>
+
+        <div class="bannerimage contact">
+            <?php  echo do_shortcode( '[wpgmza id="1"]' );  ?>
+        </div>
+
+
+        <div id="primary" class="content-area">
+            <div class="container-narrow">
+                <main id="main" class="site-main maincontact" role="main">
+
+                    <?php while ( have_posts() ) : the_post(); ?>
+
+                        <?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+                        <?php
+                            // If comments are open or we have at least one comment, load up the comment template.
+                            if ( comments_open() || get_comments_number() ) :
+                                comments_template();
+                            endif;
+                        ?>
+
+                    <?php endwhile; // End of the loop. ?>
+
+                </main><!-- #main -->
+                <div class="contactform">
+                    <?php  echo do_shortcode( '[contact-form-7 id="39" title="Contact form 1"]' );  ?>
+                </div>
+            </div>
+        </div><!-- #primary -->
 
 <?php } else { ?>
 

@@ -151,10 +151,6 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
-figure {
-	margin: 1em 40px;
-}
-
 hr {
 	box-sizing: content-box;
 	height: 0;
@@ -292,7 +288,7 @@ h6 {
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 42px;
     line-height: 1.4;
     margin: 0 0 0.5em;
 }
@@ -435,7 +431,7 @@ table {
 # Page Layouts
 --------------------------------------------------------------*/
 
-.container, nav {
+.container, .container-narrow, nav, .home .content-area article {
     width: 100%;
     float: left;
 }
@@ -465,7 +461,7 @@ table {
     color: #ffffff;
     text-decoration: none;
     line-height: 2.6;
-    background: transparent url(img/infopack_arrow.png) no-repeat right center;
+    background: transparent url(img/infopack_arrow.png) no-repeat right 10px center;
     padding-right: 20px;
 }
 
@@ -474,17 +470,92 @@ table {
 }
 
 
+
+.site-footer {
+    background: #22aecd;
+    margin-top: 30px;
+}
+
+.site-footer .footerlogos {
+    margin: 40px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.site-footer .footerlogos img {
+    max-width: 49%;
+    padding: 0 5%;
+}
+
+.site-footer p.location {
+    font-family: Dosis, arial, helvetica, sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.site-footer p.location span {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.site-footer .footermenu .menu {
+    margin: 30px 0 0;
+    padding: 12px 10px;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #59c2da;
+    border-bottom: 1px solid #59c2da;
+    list-style: none;
+}
+
+.site-footer .footermenu .menu a {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+.site-footer .copyright {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    margin: 30px 0;
+}
+
+
 /* Home page */
 
+h1#bannertext {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    margin: 30px 0 0;
+    z-index: 100;
+    color: #ffffff;
+    font-size: 38px;
+    line-height: 1;
+    text-shadow: 1px 1px 6px #888;
+        -webkit-transform:scale(0.8,1); /* Safari and Chrome */
+        -moz-transform:scale(0.8,1); /* Firefox */
+        -ms-transform:scale(0.8,1); /* IE 9 */
+        -o-transform:scale(0.8,1); /* Opera */
+        transform:scale(0.8,1); /* W3C */
+}
+
 span.wds_right_btn_cont {
-    background: transparent url(img/slider_right.png) no-repeat center center;
+    background: transparent url(img/slider_right_tap.png) no-repeat center center;
     width: 36px;
     height: 36px;
     cursor: pointer;
-}
-
-span.wds_right_btn_cont:hover {
-    background: transparent url(img/slider_right_hover.png) no-repeat center center;
 }
 
 span.wds_right-ico_0 i {
@@ -492,14 +563,10 @@ span.wds_right-ico_0 i {
 }
 
 span.wds_left_btn_cont {
-    background: transparent url(img/slider_left.png) no-repeat center center;
+    background: transparent url(img/slider_left_tap.png) no-repeat center center;
     width: 36px;
     height: 36px;
     cursor: pointer;
-}
-
-span.wds_left_btn_cont:hover {
-    background: transparent url(img/slider_left_hover.png) no-repeat center center;
 }
 
 span.wds_left-ico_0 i {
@@ -521,8 +588,21 @@ body.home .content-area {
 .home .content-area iframe {
     margin: 0 auto;
     float: none;
-    width: 650px;
     margin: 40px 0;
+}
+
+.site-blocks {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.content-blocks {
+    text-align: center;
+}
+
+.content-blocks .content-block {
+    padding: 0 10px;
 }
 
 .content-blocks .content-block h2 {
@@ -546,10 +626,11 @@ body.home .content-area {
 
 .bannerimage {
     width: 100%;
-    height: 300px;
+    height: 150px;
     display: block;
     background-size: cover;
     background-position-y: 50%;
+    background-position-x: 50%;
 }
 
 .bannerimage.aligntop {
@@ -596,6 +677,42 @@ body.home .content-area {
     background-position-y: 100%;
 }
 
+#main {
+    padding: 0 10px;
+    margin: 30px 0;
+}
+
+.home #main {
+    padding: 0;
+}
+
+
+/* Contact */
+
+form.wpcf7-form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+form.wpcf7-form label {
+    font-size: 14px;
+    line-height: 3;
+}
+
+form.wpcf7-form span.req {
+    color: #22b6cc;
+}
+
+form.wpcf7-form input, form.wpcf7-form textarea {
+    width: 100%;
+}
+
+form.wpcf7-form p {
+    margin: 0;
+    line-height: 1;
+    font-size: 12px;
+}
 
 
 
@@ -606,25 +723,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	border: none;
+	background: #22b6cc;
+	color: #ffffff;
+	font-size: 14px;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: 12px 0;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	background: #c8ebf2;
 }
 
 button:focus,
@@ -1055,7 +1166,6 @@ object {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
-	width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1095,9 +1205,59 @@ object {
 }
 
 
+.tos-touch .tos-wrapper.tos-hover .tos-close {
+    opacity: 1;
+}
+
+.tos-close {
+    top: 50px;
+    opacity: 1;
+}
+
+
+
+
+
 /*--------------------------------------------------------------
-## Captions
+## Responsive
 --------------------------------------------------------------*/
+
+
+
+
+@media only screen and (min-width : 330px) and (max-width : 410px) {
+
+    h1#bannertext {
+        font-size: 40px;
+        font-weight: 200;
+        text-shadow: 1px 1px 6px #888;
+    }
+
+}
+
+
+@media only screen and (min-width : 411px) and (max-width : 767px) {
+
+    h1#bannertext {
+        left: 80px;
+        right: 80px;
+        z-index: 100;
+        color: #ffffff;
+        font-size: 44px;
+        line-height: 1;
+        font-weight: 200;
+        text-shadow: 1px 1px 6px #888;
+    }
+
+    h1#bannertext span {
+        display: block;
+    }
+
+}
+
+
+
+
 
 
 /* 768px - iPads (portrait), etc ----------- */
@@ -1126,6 +1286,7 @@ object {
         float: right;
         width: auto;
         margin-right: 10px;
+        background: transparent url(img/infopack_arrow.png) no-repeat right center;
     }
 
 	.menu-toggle {
@@ -1150,6 +1311,106 @@ object {
         color: #384f5b;
     }
 
+    h1#bannertext {
+        left: 10%;
+        right: 10%;
+        font-size: 72px;
+        line-height: 1;
+        font-weight: 200;
+        text-shadow: 1px 1px 6px #888;
+        margin-top: 10%;
+    }
+
+    .site-content {
+        min-height: 400px;
+    }
+
+    h1#bannertext span {
+        display: block;
+    }
+
+    span.wds_right_btn_cont {
+        background: transparent url(img/slider_right.png) no-repeat center center;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    span.wds_right_btn_cont:hover {
+        background: transparent url(img/slider_right_hover.png) no-repeat center center;
+    }
+
+    span.wds_right-ico_0 i {
+        display: none;
+    }
+
+    span.wds_left_btn_cont {
+        background: transparent url(img/slider_left.png) no-repeat center center;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    span.wds_left_btn_cont:hover {
+        background: transparent url(img/slider_left_hover.png) no-repeat center center;
+    }
+
+    span.wds_left-ico_0 i {
+        display: none;
+    }
+
+    .bannerimage {
+        height: 300px;
+    }
+
+    .site-blocks {
+        float: left;
+        width: 100%;
+    }
+
+    .content-blocks {
+        float: left;
+        width: 100%;
+        margin: 60px 0 0;
+        padding: 0 10px;
+        max-height: 280px;
+        overflow: hidden;
+    }
+
+    .content-blocks .content-block {
+        padding: 0;
+    }
+
+    .content-blocks.item-even img {
+        float: left;
+        width: 350px;
+        margin-right: 48px;
+    }
+
+    .content-blocks.item-odd img {
+        margin-left: 48px;
+        width: 350px;
+    }
+
+    .content-blocks .content-block {
+        float: left;
+        width: 350px;
+    }
+
+    .site-footer .footerlogos img {
+        max-width: 49%;
+    }
+
+    .site-footer .menu {
+        text-align: center;
+    }
+
+    .site-footer li.menu-item {
+        padding: 0 20px;
+        display: inline-block;
+    }
+
+
 }
 
 
@@ -1164,6 +1425,16 @@ object {
 
 @media only screen and (min-width : 1024px) {
 
+    h1#bannertext {
+        left: 10%;
+        right: 10%;
+        font-size: 84px;
+        line-height: 1;
+        font-weight: 200;
+        text-shadow: 1px 1px 10px #777;
+        margin-top: 10%;
+    }
+
     .container {
         float: none;
         margin: 0 auto;
@@ -1176,12 +1447,26 @@ object {
         width: 960px;
     }
 
-    .content-blocks {
+    .home .content-area article {
+        text-align: inherit;
+        padding: 40px 0 16px;
+    }
+
+    .home .content-area iframe {
         float: left;
-        width: 100%;
-        margin: 100px 0 0;
-        max-height: 280px;
-        overflow: hidden;
+        width: 500px;
+        margin: 0;
+    }
+
+    .home .content-area .homecontent {
+        float: left;
+        width: 470px;
+        padding: 0 0 0 60px;
+    }
+
+
+    .content-blocks .content-block {
+        padding: 0;
     }
 
     .content-blocks.item-even img {
@@ -1192,11 +1477,24 @@ object {
 
     .content-blocks.item-odd img {
         margin-left: 60px;
+        width: 450px;
     }
 
     .content-blocks .content-block {
         float: left;
-        width: 450px;
+        width: 430px;
+    }
+
+    main#main.maincontact {
+        float: left;
+        width: 45%;
+        margin: 30px 5% 30px 0;
+    }
+
+    .contactform {
+        float: left;
+        width: 50%;
+        margin: 30px 0;
     }
 
 
@@ -1208,9 +1506,17 @@ object {
 
 
 
+
+
+
 /* 1280px - larger desktop screens ----------- */
 
 @media only screen and (min-width : 1200px) {
+
+    h1#bannertext {
+        font-size: 120px;
+        line-height: 1.05;
+    }
 
     .container {
         float: none;
