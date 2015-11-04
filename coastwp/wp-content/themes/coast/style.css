@@ -677,6 +677,10 @@ body.home .content-area {
     background-position-y: 100%;
 }
 
+.bannerimage.b404 {
+    background-image: url(img/404_banner.jpg);
+}
+
 #main {
     padding: 0 10px;
     margin: 30px 0;
@@ -728,7 +732,7 @@ input[type="submit"] {
 	color: #ffffff;
 	font-size: 14px;
 	line-height: 1;
-	padding: 12px 0;
+	padding: 12px;
 }
 
 button:hover,
@@ -1217,6 +1221,18 @@ object {
 
 
 
+/*--------------------------------------------------------------
+## Admin
+--------------------------------------------------------------*/
+
+
+#header-logo {
+    background-image: url(img/logo.png);
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 ## Responsive
@@ -1322,7 +1338,7 @@ object {
     }
 
     .site-content {
-        min-height: 400px;
+        min-height: 600px;
     }
 
     h1#bannertext span {

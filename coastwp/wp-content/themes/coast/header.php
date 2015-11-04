@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <link rel="shortcut icon" href="favicon.ico" />
 
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Dosis:200,400' rel='stylesheet' type='text/css'>
@@ -33,7 +34,7 @@
                     <div class="logo">
                         <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
                     </div>
-                    <a href="#" title="Request your free information pack now" class="request">Request your free information pack now</a>
+                    <a href="<?php echo get_page_link(13); ?>" title="Request your free information pack now" class="request">Request further information</a>
                 </div>
             </div>
             <nav id="site-navigation" class="main-navigation" role="navigation">

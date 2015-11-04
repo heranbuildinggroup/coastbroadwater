@@ -151,7 +151,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/*
+/**
  * Split and wrap title
  */
     function get_split_title($postID) {
@@ -167,3 +167,67 @@ require get_template_directory() . '/inc/jetpack.php';
 
         return $output;
     }
+
+
+/**
+ * Replace admin login logo
+ */
+
+add_filter( 'login_headerurl', 'namespace_login_headerurl' );
+/**
+ * Replaces the login header logo URL
+ *
+ * @param $url
+ */
+function namespace_login_headerurl( $url ) {
+    $url = home_url( '/' );
+    return $url;
+}
+
+add_filter( 'login_headertitle', 'namespace_login_headertitle' );
+/**
+ * Replaces the login header logo title
+ *
+ * @param $title
+ */
+function namespace_login_headertitle( $title ) {
+    $title = get_bloginfo( 'name' );
+    return $title;
+}
+
+add_action( 'login_head', 'namespace_login_style' );
+/**
+ * Replaces the login header logo
+ */
+function namespace_login_style() {
+    echo '<style>.login h1 a { background-image: url( ' . get_template_directory_uri() . '/img/logo.png ) !important; width: 260px; height: 210px; background-size: 260px; }</style>';
+}
+
+
+
+/**
+ * Remove unnecessary header info
+ */
+
+add_action( 'init', 'remove_header_info' );
+function remove_header_info() {
+    remove_action( 'wp_head', 'rsd_link' );
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+    remove_action( 'wp_head', 'wp_generator' );
+    remove_action( 'wp_head', 'start_post_rel_link' );
+    remove_action( 'wp_head', 'index_rel_link' );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link' );         // for WordPress < 3.0
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' ); // for WordPress >= 3.0
+}
+
+// remove extra CSS that 'Recent Comments' widget injects
+add_action( 'widgets_init', 'remove_recent_comments_style' );
+function remove_recent_comments_style() {
+    global $wp_widget_factory;
+    remove_action( 'wp_head', array(
+        $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
+        'recent_comments_style'
+    ) );
+}
+
+
